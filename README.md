@@ -149,7 +149,7 @@ Eric Gundersen, Mapbox
   * [wiki article](https://wiki.openstreetmap.org/wiki/AI-Assisted_Road_Tracing)
   * [mapillary id editor](https://blog.mapillary.com/news,/update/2014/08/19/id.html) (not sure this is what facebook is using but seems like a similar idea)
 * Assessing Coverage
-  * [Population Density Open Dataset](https://code.fb.com/core-data/open-population-datasets-and-open-challenges/**
+  * [Population Density Open Dataset](https://code.fb.com/core-data/open-population-datasets-and-open-challenges/)
   * Use this information to inform areas of focus for mapping
 * Mobius - "Continuous Ingestion of OSM Data"
   * Challenges: Vandalism, volume
