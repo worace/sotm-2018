@@ -34,11 +34,9 @@
 ## Automotive Panel
 
 **Speakers**
-
 * [Emily Schwartz (uber)](https://twitter.com/emkschwartz)
 * [Kevin Webb](https://twitter.com/kvnweb)
-
-
+<!-- -->
 * [SharedStreets](https://sharedstreets.io/)
 * [NACTO](https://nacto.org/)
 * [Uber Movement](https://movement.uber.com)
