@@ -248,7 +248,7 @@ Eric Gundersen, Mapbox
   * Support via slack
   * 10 points for new roads; 1 point for repeat coverage
 
-# Day 2
+# Day 2 (Saturday October 6, 2018)
 
 ## Keynote - Mapping to Fight FGM
 
