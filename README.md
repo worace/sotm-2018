@@ -247,3 +247,143 @@ Eric Gundersen, Mapbox
   * Keep the camera if you capture 1 million points!
   * Support via slack
   * 10 points for new roads; 1 point for repeat coverage
+
+# Day 2
+
+## Keynote - Mapping to Fight FGM
+
+[Neema Meremo](https://twitter.com/neemameremo)
+
+* [Types of FGM](http://www.endfgm.eu/female-genital-mutilation/what-is-fgm/)
+* 70%+ in some portions of Tanzania
+* [Hope For Girls & Women](https://hopeforgirlsandwomen.wordpress.com/)
+  * [Twitter](https://twitter.com/hopeforgirlstz)
+  * Provides safe houses for girls
+  * **Lack of reliable maps in rural areas hinders safehouse access**
+* Rural Tanzania very sparsely mapped
+  * Dar Es Salaam vs Rural Tanzania
+* [Crowd2Map](https://crowd2map.wordpress.com/) [Twitter](https://twitter.com/crowd2map)
+* Combination of Remote and Local Volunteers
+* RVs set up tasks and determine which areas contain buildings to be mapped
+  * [MapSwipe](https://mapswipe.org/)
+* LVs validate and add new buildings using [Maps.Me](https://maps.me/) and [FieldPapers](https://wiki.openstreetmap.org/wiki/Field_Papers)
+* Coordination between RVs (often educated, technically proficient) + LVs (low schoo)
+* Smartphones still a novelty in many of the areas being mapped
+* [HOT MicroGrant](https://www.hotosm.org/updates/2017-04-20_hot_microgrants_2017_results) helped purchase smartphones for mapping ([announcement](https://crowd2map.wordpress.com/2017/04/22/crowd2map-has-been-awarded-a-hot-microgrant/))
+* Program giving women access to smartphones to participate in the mapping initiative
+  * Carries risk of community backlash, violence against women, rape, assault
+  * Men often try to dominate training programs; not enough equipment to go around
+  * Traditional sexism characterizes access to technology in Tanzania
+* [YouthMappers](https://www.youthmappers.org/)
+* 3k+ girls finding safehouses thanks to mapping efforts
+* 75% reduction in FGM in Tanzania
+* Trained 300+ new mappers through the program
+* [UNFPA Mapathon](https://ungaguide.com/listing/mapathon-at-unfpa-to-help-eliminate-female-genital-mutilation/)
+* **Ongoing Needs**
+
+## Filling in the Gaps with the Mapillary API
+
+[Christopher Beddow](https://twitter.com/c_beddow)
+
+* [Mapillary](https://www.mapillary.com/)
+* OSM Needs:
+  * More + Better Data
+  * Freshness
+  * Accuracy
+  * Completeness
+  * Verification
+* Evidence-based mapping
+* [Potlach](https://en.wikipedia.org/wiki/Potlatch_(software))
+* [Vespucci](https://wiki.openstreetmap.org/wiki/Vespucci)
+* Rise of machine-assested mapping
+  * Gives access to greater scale, detail, etc
+  * Still needs verification
+* "Machine Enhancement"
+  * Machine finds notable data, human fixes the map
+* Mapillary image processing
+  * Object detection (currently 100+ known entity types)
+  * GPS information allows spatial placement of objects within images
+* Common OSM Gaps
+  * Often have basic structure (roads, buildings, etc)
+  * Missing details and attributes
+  * Freshness -- mapillary images give timestamps to assess freshness
+* [JOSM Mapillary plugin](https://wiki.openstreetmap.org/wiki/JOSM/Plugins/Mapillary) [GitHub](https://github.com/JOSM/Mapillary)
+* Mapillary API
+  * [Docs](https://www.mapillary.com/developer/api-documentation/)
+  * Can query for images by id, bounding box
+  * Can query for sequences of images
+* Data Positioning
+  * [OpenSfM](https://github.com/mapillary/OpenSfM)
+  * Image Detections API - gives breakdown of features within an image by percentage and location
+  * CV allows depth and positioning estimation from images to produce more precise image interpretation
+* [Mapillary Vector Tiles](https://www.mapillary.com/developer/tiles-documentation/) [Blog Post](https://blog.mapillary.com/update/2015/05/27/vectortiles.html)
+  * [Can now be loaded into iD](https://medium.com/@vershwal/vector-tile-support-for-openstreetmaps-id-editor-40b1cb77f63b)
+  * Layers:
+    * Imagery
+    * Unmapped roads
+    * Traffic signs
+    * image detections
+* [Pic4Review](https://wiki.openstreetmap.org/wiki/Pic4Review)
+* [go2mapillary](https://github.com/enricofer/go2mapillary) QGIS plugin
+
+
+## OSM for Disaster Management: City Wide Mapping Project (Jakarta,Surabaya and Semarang)
+
+[Harry Mahardhika Machmud](https://twitter.com/harrymahar), Humanitarian OpenStreetMap Team Indonesia
+
+* Mapped 3 big cities in indonesia - Jakarta, Surabaya, Samarang
+* [PDC - Pacific Disaster Center](https://www.pdc.org/)
+* [Humanitarian OpenStreetMap Team (HOT)](https://www.hotosm.org/)
+* Mapping Objectives
+  * Everything...
+  * POIs, green space, roads, buildings, infrastructure, waterways, health facilities, etc
+* Timeline
+  * Surabaya: Oct 2016 - Feb 2017
+  * Jakarta: March 2017 - Nov 2017
+  * Samarang: Jan 2018 - July 2018
+* Preparation
+  * Coordination with local governments; getting surveying permit letters
+  * Prioritize mapping goals
+  * Recruit mappers - Hire + Train local people (important to have local knowledge)
+* Equipment
+  * Local survey map
+  * Satellite imagery (USAID?)
+  * JOSM settings
+* **Process**
+  * Team members collecting data on mobile devices
+  * Verify and upload data to OSM via JSOM
+  * [OpenDataKit](https://opendatakit.org/)
+  * [OpenMapKit](http://openmapkit.org/)
+  * [Process Video](https://drive.google.com/file/d/1u-Ohda5Ddd9yrq7wu4gQlO2DjmrOlxUn/view)
+* Progress
+  * [Surabaya](bit.ly/surabayachanges)
+  * [Jakarta](bit.ly/jakartachanges)
+  * [Semarang](bit.ly/semarangchanges)
+* Data In use by other tools
+  * https://petabencana.id/map/jakarta
+  * http://inaware.bnpb.go.id/inaware/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
