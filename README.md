@@ -455,14 +455,54 @@ Fayven Bastani, MIT CSAIL
     * Getting from 98% coverage to 100% coverage
     * Hard to find small amounts of missing coverage in already heavily-mapped areas; ML can save time here
 * Giving the user focus via these tools can improve mapping significantly
-* [RoadTracer](https://www.csail.mit.edu/news/mitqcri-system-uses-machine-learning-build-road-maps) [source](https://github.com/mitroadmaps/roadtracer) [paper](https://roadmaps.csail.mit.edu/roadtracer.pdf)
+* [RoadTracer](https://www.csail.mit.edu/news/mitqcri-system-uses-machine-learning-build-road-maps)
+  * [source](https://github.com/mitroadmaps/roadtracer)
+  * [paper](https://roadmaps.csail.mit.edu/roadtracer.pdf)
 
+## Why Geocoding is Hard and How You and OSM Can Help
 
+[Julian Simioni](https://twitter.com/juliansimioni)
 
+* [Pelias Geocoder](github.com/pelias/pelias)
+* [geocode.earth](geocode.earth)
+* Point Datasets
+  * [Open Addresses](https://openaddresses.io/)
+* OSM - Point and Polygon Data
+* [TriMet Trip Planner Oregon](http://trimet.org/)
+* Polygon Routing - Picking a point can produce challenges - unexpected routing due to centroid placement
+* [OSM Entrance Tag](https://wiki.openstreetmap.org/wiki/Key:entrance)
+* [Detroit Demolition Tracker](https://cityofdetroit.github.io/demo-tracker/)
+* Interpolation Engine (Pelias + Nominatim both use this approach)
+  * Designed to deal with incomplete data
+  * Problem Case: When incomplete data appears complete (e.g. Detroit -- lots of empty lots due to demolation; cause the map to look incomplete even though it is)
+* "Managing Absence" - when is something missing vs when there is actually nothing there
+* OSM - is it nearing "completion" in some areas?
 
+##  Offline Maps for Mobile — Making Maps That Are Mobile First
 
+[Rob Chohan](https://twitter.com/robchohan)
 
-
+* RobLabs.com
+* [Slides](https://mobile1st.roblabs.com/)
+* Mobile maps for backcountry -- competing vs paper maps + compass
+* Goal: Help people be prepared in the backcountry
+* Un-Goals:
+  * Another App to usurp your time in the Wilderness
+  * Another Social App
+  * Another tracking app
+* Distribute great spatial information
+* Mobile First -> Natively offline -- "Design for airplane mode"
+* All the data is included with the app -- no server involved
+* Privacy and security go hand in hand
+* Open Data sources
+  * OSM (via [OpenMapTiles](https://openmaptiles.org/))
+  * [USGS NationalMap](https://www.usgs.gov/core-science-systems/national-geospatial-program/national-map-0)
+  * [US Forest Service Enterprise Data](https://data.fs.usda.gov/geodata/edw/)
+  * [NPS Symbol Library](https://www.nps.gov/maps/tools/symbol-library/)
+  * [Wilderness.net](https://www.wilderness.net/nwps/geography)
+* [Mapbox Geobuf](https://github.com/mapbox/geobuf)
+* [klokantech tileserver-gl](https://github.com/klokantech/tileserver-gl)
+* Google Encoding Standards -- [WebP](https://developers.google.com/speed/webp/) & [Protobuf](https://developers.google.com/protocol-buffers/)
 
 
 
