@@ -505,8 +505,63 @@ Fayven Bastani, MIT CSAIL
 * Google Encoding Standards -- [WebP](https://developers.google.com/speed/webp/) & [Protobuf](https://developers.google.com/protocol-buffers/)
 
 
+## The Map Quality Measurement Initiative: A heat-map approach to visualize gaps in map quality
 
+Monica Brandeis, Critigen
 
+* Quality Analysis Overview
+  * Map Completeness
+    * [Missing Maps](https://www.missingmaps.org/)
+    * [OSM Analytics](https://osm-analytics.org/)
+    * [Task Manager](https://tasks.hotosm.org/)
+  * Precision
+    * OSM and GPS comparisons
+    * OSM and Gov data comparisons
+  * Editor Verification
+    * [OSMCha](https://osmcha.mapbox.com/)
+    * [HOT Validation](https://wiki.openstreetmap.org/wiki/OSM_Tasking_Manager/Validating_data)
+  * Rule-based validation
+    * [OSMose](https://wiki.openstreetmap.org/wiki/Osmose)
+    * Flag and collect sets of OSM features with specific map errors
+* [atlas-checks](https://github.com/osmlab/atlas-checks)
+  * Java program to flag specific types of map errors
+  * run against OSM pbf data
+  * Most checks on road networks; some on buildings, areas of interests, pois
+  * Example: [Floating Edge Check](https://github.com/osmlab/atlas-checks/blob/dev/docs/checks/floatingEdgeCheck.md) - finding isolated / unconnected road segments
+  * [Available Checks](https://github.com/osmlab/atlas-checks#currently-available-checks)
+* Finding Regional Quality Hot Spots
+  * aggregate flagged issues from atlas-check across a region
+  * Bisect repeatedly to find outlier regions that have many flagged segments
+* Case Study: Road Quality comparisons among US cities
+* [osmquality.io](https://osmquality.io/)
+* Additional Angles
+  * Demand -- Comparing metrics vs population density, accessibility, development
+  * Social Equity -- Compare metric with racial diversity + poverty level
+  * Other indicators -- areas prone to natural disasters, etc
+* Integration + Collaboration
+  * Need to integrate analytics with JOSM, Task Manager, MapRoulette
 
+## Urchn Tells You Where Cities Change, and Where OSM is Out-of-date
 
+[Derek Lieu, Development Seed](https://twitter.com/dereklieu)
 
+* https://developmentseed.org/urban-change-viewer
+* Coverage Assessments
+  * OSM mapped building area
+  * ML building footprints
+  * Unmapped area
+* Most maps are out of date; _where_?
+* Urchn -> **Ur**ban **Ch**ange
+  * Developed with [Radiant](https://www.radiantsolutions.com/) + [Azavea](https://www.azavea.com/)
+* Urchn tools
+  * [OSMesa](github.com/azavea/osmesa) - tool for by-the-minute vector tile updates of OSM vector tiles
+  * Persistent change detection - Time-series analysis on satellite imagery to identify polygon regions where change is occurring
+    * Using landsat and sentinel 2
+    * Look for change then use 3 consecutive images to verify
+* Aggregation
+  * By tile
+  * By admin boundary
+* Where is OSM data out of date? -- Useful way to flag areas of focus for editors to map.
+* OSMesa includes last-edited date, so the urch browser can also be used to see change time (color coded)
+* Where are official maps out of date?
+* Dev Seed [Sat Utils](https://github.com/sat-utils)
