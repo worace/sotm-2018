@@ -565,3 +565,33 @@ Monica Brandeis, Critigen
 * OSMesa includes last-edited date, so the urch browser can also be used to see change time (color coded)
 * Where are official maps out of date?
 * Dev Seed [Sat Utils](https://github.com/sat-utils)
+
+## Kaart's Quality Checks to Improve Road Data and Routing
+
+Ian Malott, Kaart
+
+* [Kaart](https://kaartgroup.com/)
+* Kaart performs ground-truth quality checks on map data
+* Using cameras to collect data on local mapping
+* Discovering that older edits had much lower level of quality
+* Using custom paint styles in JOSM to make QA display more obvious
+* Suite of 9 quality checks
+  * Naming Consistency
+    * Should a name continue on a street
+    * Is the name fully written out Main St. -> Main Street
+  * Surface Types
+    * Trying to be specific - Asphalt, Concrete, etc instead of just "paved"
+    * Verify with video footage
+  * Lanes (tertiary roads + above)
+    * Include detail arounad turn lanes, bus lanes, directionality, turn restrictions
+  * Roundabouts
+    * ensure roundabouts properly tagged
+    * [Roundabout](https://wiki.openstreetmap.org/wiki/Tag:junction%3Droundabout) vs [Circular Junction](https://wiki.openstreetmap.org/wiki/Tag:junction%3Dcircular)
+  * [Ref Tags](https://wiki.openstreetmap.org/wiki/Key:ref)
+    * Ensure these are consistent and the network is valid
+  * Destination Ref Tags
+  * Road Classification
+    * Working down from motorway, trunk, primary, etc to ensure consistency
+  * [JOSM Validation Checks](https://wiki.openstreetmap.org/wiki/JOSM/Validator)
+  * Route Check
+    * Verify turn restrictions work
