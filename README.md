@@ -363,16 +363,99 @@ Eric Gundersen, Mapbox
   * https://petabencana.id/map/jakarta
   * http://inaware.bnpb.go.id/inaware/
 
+## Building AI-Assisted Mapping Tools: Progress And Lessons Learned
 
+[Drew Bollinger](https://twitter.com/drewbo19), Development Seed
 
+* Identify Coverage potential by comparing current OSM building coverage to ML-predicted building presence
+* [LabelMaker](https://github.com/developmentseed/label-maker)
+* [Google DeepLab v3](https://github.com/tensorflow/models/tree/master/research/deeplab)
+* 256x256px tiles for analysis
+* Building Masks from [SpaceNet](https://spacenetchallenge.github.io/) for training
+* Dealing with error -- easy for sat images and OSM to be slightly misaligned
+  * Use total area as a metric for assessing coverage
+* [linematch](https://github.com/mapbox/linematch)
+* [Blog Post](https://medium.com/devseed/mapping-buildings-with-help-from-machine-learning-f8d8d221214a)
+* [Jaccard Index (intersection over union)](https://en.wikipedia.org/wiki/Jaccard_index) [for object detection](https://www.pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/)
 
+## Analytic Support for Contributors: Defining Levels of Automation for Machine Learning Applied to Crowdsourced Mapping
 
+Ryan Lewis
+In-Q-Tel CosmiQ Works / SpaceNet
 
+* SpaceNet: "A corpus of commercial satellite imagery and labeled training data to use for machine learning research"
+* SpaceNet 4 Pillars
+  * Data - releasing remote sensing data
+  * Competitions - sponsoring open analytics competitions
+  * Code - publishing research on emerging analytic frameworks
+  * Tools - sharing open source software tools
+* [Public Datasets](https://spacenetchallenge.github.io/)
+  * 30cm WV-3 single strip images for 4 cities:
+    * Las Vegas
+    * Paris
+    * Shanghai
+    * Khartoum
+* Competitions
+  * Bldg footprints in Rio with 50cm imagery
+  * Bldg footprints in Las Vegas, Paris, Khartoum, Shanghai
+  * Road Extraction + Routing - LV, Paris, Khartoum, Shanghai - includes some new metrics for assessing coverage and quality
+* SpaceNet 4 - Off Nadir Analysis
+  * 27 images from nadir to 53 degrees off nadir
+  * 117k building footprint labels
+  * 3k km of road network labels
+* Challenges for CV / ML in context
+  * Targeting different types of information can require running multiple algorithms
+  * Varying computational cost + performance across different models / application
+* ML + Mapping - translating to GIS formats
+  * Instance segmentation -> line or polygon
+  * Object classification -> geometric features with properties
+  * "Sub-feature classification" -> OSM Classification scheme (`building=...`)
+* Evaluation metrics
+  * Object count
+  * Jaccard/IoU
+  * F1 score w/IoO threshold >= 0.5
+  * Cumulative IoU
+  * pixel-based f1-score
+  * [PoLiS metric](https://ieeexplore.ieee.org/document/6849454)
+  * **qualitative feedback from mappers**
+* [AWS SageMaker](https://aws.amazon.com/sagemaker/)
+* **Level of Difficulty** for ML Mapping
+  * useful to clarify levels of automation (similar to how autonomous vehicle industry breaks down automation targets)
+  * how do mappers validate projections from ML models?
+* Levels
+  * 0 - crowdsource improvements; no automation (Traditional OSM approach)
+  * 1 - Tasking Manager Planning Assistance (e.g. [Dev Seed building coverage tasker](https://medium.com/devseed/mapping-buildings-with-help-from-machine-learning-f8d8d221214a))
+  * 2 - Some Label Suggestions w/ human completion
+  * 3 - Complete Label Suggestions w/human validation (Machine provides geometry + populated labels. Human evaluates performace on a per-entity basis...i.e. complete validation)
+  * 4 - Complete mapping with human validation (Mapping larger areas that can't be validated exhausitvely; confident enough to rely on spot-checking / partial validation)
+  * 5 - Complete mapping
 
+##  Semi-Automated Map Editing
 
+Fayven Bastani, MIT CSAIL
 
+> consider machine-assisted map editing, where automatic map inference is integrated with existing, human-centric map editing workflows.
 
-
+* [Abstract](http://nms.lcs.mit.edu/papers/index.php?detail=256)
+* Goal: Overcome coverage gaps in rural areas
+* 2 decades of research toward map inference from aerial imagery and gps traces
+* Adoption is slow
+  * **Error rates** - Still too high for fully automated approaches
+  * Many automated systems take a "from scratch" approach -- unresolved questions around combining inference with existing map information
+  * **Tooling** - lack of integration with existing map editing tools (eg OSM iD / JOSM etc)
+* **Machine-Assisted Map Editing**
+* Prototype: infer streets within a region; provide all of this information to user to edit. Make corrections on a per-segment basis.
+  * Speed was not significantly faster than simply tracing (~ 1.1x)
+  * Not much faster to validate than to just trace
+* Breaking down by context
+  * **Sparse coverage**: add major arterial roads
+    * major roads are long, so manual tracing is slow.
+    * Validation-based approach can be more beneficial here
+  * **High coverage**: reduce time searching for unmapped roads
+    * Getting from 98% coverage to 100% coverage
+    * Hard to find small amounts of missing coverage in already heavily-mapped areas; ML can save time here
+* Giving the user focus via these tools can improve mapping significantly
+* [RoadTracer](https://www.csail.mit.edu/news/mitqcri-system-uses-machine-learning-build-road-maps) [source](https://github.com/mitroadmaps/roadtracer) [paper](https://roadmaps.csail.mit.edu/roadtracer.pdf)
 
 
 
