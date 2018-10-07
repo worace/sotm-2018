@@ -18,7 +18,7 @@
 
 ## OSM In Every Car… Closer Than You May Think
 
-[Philipp Kandal](https://twitter.com/apphil)
+[Philipp Kandal](https://twitter.com/apphil), Telenav
 
 * Intensive mapping experiments -- thorough mapping in canada
 * "Embedded Navigation" - Enhanced mapping with sufficient metadata to inform automotive safety systems (speed limits, lanes, turn restrictions, etc)
@@ -45,19 +45,26 @@
 
 ## Validation Of The Users, By The Users, For The Users
 
-[Matthew Gibb](https://twitter.com/giblet22) - Radiant Solutions
+[Matthew Gibb](https://twitter.com/giblet22), Radiant Solutions
 
 * [JOSM BuildingsTools](https://wiki.openstreetmap.org/wiki/JOSM/Plugins/BuildingsTools)
 * [Tasking Manager](https://tasks.hotosm.org/) ([wiki](https://wiki.openstreetmap.org/wiki/OSM_Tasking_Manager))
 * [MapRoulette](http://www.maproulette.org/) ([wiki](https://wiki.openstreetmap.org/wiki/MapRoulette))
 * [developmentseed/scoreboard](https://github.com/developmentseed/scoreboard)
 
+## Space to the Power of X
+
+[Kevin Bullock](https://twitter.com/kevin_bullock),  DigitalGlobe
+
+* Providing satellite images and analysis tools, some available open source, particularly for HOT tasks
+* [SpaceNet challenge + corpus](https://spacenetchallenge.github.io/)
+  * 2018 challenge is to extract building footprints!
+* Offers [GDBX Notebooks](https://notebooks.geobigdata.io/) to analyze spatial images
+
 ## POI Data Illuminated
 
-Diana Shkolnikov, StreetCred
+[Diana Shkolnikov](https://twitter.com/dianashk), [StreetCred](https://www.streetcred.co/)
 
-* [@dianashk](https://twitter.com/dianashk)
-* [StreetCred](https://www.streetcred.co/)
 * StreetCred is developing a "self-sustaining open protocol for POI data collection and distribution."
 * POI Difficulties:
   * **Coverage**
@@ -102,6 +109,24 @@ Joe Flasher, Amazon Web Services
   * [Building Detector Challenge](https://spacenetchallenge.github.io/datasets/spacenetBuildings-V2summary.html)
 * [LandSat on AWS](http://landsatonaws.com/)
 
+##Can We Validate Every Change on OSM?
+
+[Lukas Martinelli](https://twitter.com/lukmartinelli), MapBox
+
+* Post-mortem on the OSM/MapBox vandalism earlier this year:
+  * changesets were aggregated by day and each was validated by **one** human
+  * the change that went through was right before midnight
+  * the user's other changes were correctly rejected
+* Newer process
+  * need consensus to pass through changes
+  * antagonistic testing with a red team
+
+* Prevent vandalism with:
+  * secure sign ups (foil bots)
+  * editor validation
+  * single source for seeing and validating changesets, specifically...
+  * [OSMcha](https://osmcha.mapbox.com/)
+
 ## The Machine Mappers Are Coming
 
 Eric Gundersen, Mapbox
@@ -139,7 +164,7 @@ Eric Gundersen, Mapbox
 * ML - OCR Vandalism checks for profanity
 * **Road Identification**
   * Started with Thailand; now working on Indonesia
-  * Using High identification threshold to pick a centerline and avoid false positives
+  * Using high identification threshold to pick a centerline and avoid false positives
   * Follow up with trimming + merging process to fill gaps
   * Remove "islands" where roads don't connect to the rest of the network
   * Convert data into OSM format and open in iD
@@ -158,7 +183,7 @@ Eric Gundersen, Mapbox
   * "Tinder for Changesets" - Evaluate world before and after a given changeset
 * Mobius Boston Prototype
   * 4k OSM Changesets
-  * Compressed to 2k "logical" changesets
+  * Compressed to 2k "logical" changesets (LoCha)
   * 48% are single-feature change -- can be very quickly reviewed
   * 5% of changesets contain 85% of features changed (wow!)
 
@@ -193,11 +218,25 @@ Eric Gundersen, Mapbox
   * [Vietnam OpenRoads](https://developmentseed.org/projects/openroads/) - Independent OSM instance to enable working with private data
   * [TeachOSM](http://teachosm.org) - Stress-free training with isolated sandbox environments
 
+##Discover Rural America
+
+[Clifford Snow](https://osm_seattle.snowandsnow.us/about/)
+
+* Speaker: community mapper in rural Washington
+* Of approx. 3500 US counties, approx. 2000 are non metropolitan
+* Rural areas suffer, in particular, from out of date roads and roads to nowhere
+* Logistically:
+  * integrate data from state depts of transportation
+  * methodical county-by-county OSM coverage
+  * corporate help
+  * development work to make it easier to import new roads
+* Profoundly
+  * publicity, mapping parties, more outreach to rural communities (e.g., through 4H or Rotary/Lions)
+
 ## OSM vs. Blockchain to Tell the Historical Mapping Story
 
-[Jeremy Lechtzin](https://twitter.com/jeremylechtzin)
+[Jeremy Lechtzin](https://twitter.com/jeremylechtzin), [StreetDeets](http://streetdeets.com/)
 
-* [StreetDeets](http://streetdeets.com/)
 * [Old Brooklyn Heights](https://oldbrooklynheights.com/)
 * [NYPL Historical Maps & Data](https://www.meetup.com/historical-data-and-maps-at-nypl/)
 * [NYC Spacetime Directory](https://spacetime.nypl.org/)
@@ -217,6 +256,25 @@ Eric Gundersen, Mapbox
   * [Foam](https://foam.space/)
   * [StreetCred](https://www.streetcred.co/)
   * Comparisons to property deeds -- these often contain timestamps, provenance chains (grantor to grantee), and geographic context (location of property)
+
+## Inclusive Pedestrian Mapping: Open Sidewalks, AccessMap, and Accessibility
+
+[Nick Bolten](https://twitter.com/njbolten)
+
+* 54 million Americans have trouble walking 1/4 mile, and are often sent down streets they can't use (stairs, incline, etc.)
+* need information about:
+  * where sidewalks and crosswalks are
+  * barriers
+  * width (wide enough?)
+  * surface (flat/smooth enough?)
+* [AccessMap](https://www.accessmap.io/)
+  * emphasizes **pedestrian network** instead of roads
+  * required a lot of careful data science/hand-labeling
+  * covers small area in Seattle
+  * uses data from [OpenSidewalks](https://www.opensidewalks.com/)
+* Debate over whether to a) tag sidewalks as road metadata or b) create separate sidewalk
+* Considers b) much easier to edit, more accurate and robust
+
 
 ## The OpenStreetMap US Camera Lending Program
 
@@ -247,6 +305,21 @@ Eric Gundersen, Mapbox
   * Keep the camera if you capture 1 million points!
   * Support via slack
   * 10 points for new roads; 1 point for repeat coverage
+
+## SharedStreets: Making Streets Interoperable
+
+[Kevin Webb](https://twitter.com/kvnweb), SharedStreets
+
+* Shared language for the street, crossing arbitrary boundaries of cities/infrastructures/companies
+* Stop thinking of transport data as "spatial dimensional"; it is **""network dimensional"**
+* (POIs are also just points projected onto the network)
+* Unique "map-agnostic" IDs given for street segments
+* Stable ID enables:
+  * many different base maps, but easily compared
+  * cities can freely update
+  * aggregated movement data
+* [SharedStreets Referencing System](https://github.com/sharedstreets/sharedstreets-ref-system)
+* Also, SharedStreets API, couldn't find online
 
 # Day 2 (Saturday October 6, 2018)
 
