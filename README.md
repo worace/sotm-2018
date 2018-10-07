@@ -43,6 +43,16 @@
 * [ODBL](https://opendatacommons.org/licenses/odbl/)
 * [GTFS - General Transit Feed Specification](https://en.wikipedia.org/wiki/General_Transit_Feed_Specification)
 
+## The Road Towards Diversity in OSM Still Needs to be Mapped
+
+[Miriam Gonzalez](https://twitter.com/mapanauta), Geochicas
+
+* Co-founded [Geochicas](https://wiki.openstreetmap.org/wiki/GeoChicas)
+* Only 3% of OSM mappers are women! (wow)
+* Women tend to perceive gender-based harassment, men tend to not (instead perceive North American/Euro-centric bias in OSM)
+* Geochicas mapped roads named for women in some cities (high was 8%?)
+* Encouraged push for everyone to ask for gender balance on panels
+
 ## Validation Of The Users, By The Users, For The Users
 
 [Matthew Gibb](https://twitter.com/giblet22), Radiant Solutions
