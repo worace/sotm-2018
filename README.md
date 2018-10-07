@@ -50,7 +50,7 @@
 * Co-founded [Geochicas](https://wiki.openstreetmap.org/wiki/GeoChicas)
 * Only 3% of OSM mappers are women! (wow)
 * Women tend to perceive gender-based harassment, men tend to not (instead perceive North American/Euro-centric bias in OSM)
-* Geochicas mapped roads named for women in some cities (high was 8%?)
+* Geochicas [mapped](https://geochicasosm.github.io/lascallesdelasmujeres/) roads named for women in cities, mostly in Latin America (high was 15% in Barcelona)
 * Encouraged push for everyone to ask for gender balance on panels
 
 ## Validation Of The Users, By The Users, For The Users
@@ -678,3 +678,14 @@ Ian Malott, Kaart
   * [JOSM Validation Checks](https://wiki.openstreetmap.org/wiki/JOSM/Validator)
   * Route Check
     * Verify turn restrictions work
+
+# Day 3
+
+## Pic4Review: Mapping with Street-level Imagery
+
+[Christopher Beddow](https://twitter.com/c_beddow), Mapillary
+
+* [Pic4Review](https://pic4review.pavie.info/#/)
+  * Tool to use street-view imagery to edit/review OSM data
+  * Uses Mapillary, OpenStreetCam, Wikimedia COmmons, or Flickr
+  * Different "missions" for users, focusing on a single tag (you can create your own!)
