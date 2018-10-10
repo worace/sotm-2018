@@ -350,7 +350,7 @@ Eric Gundersen, Mapbox
 * RVs set up tasks and determine which areas contain buildings to be mapped
   * [MapSwipe](https://mapswipe.org/)
 * LVs validate and add new buildings using [Maps.Me](https://maps.me/) and [FieldPapers](https://wiki.openstreetmap.org/wiki/Field_Papers)
-* Coordination between RVs (often educated, technically proficient) + LVs (low schoo)
+* Coordination between RVs (often educated, technically proficient) + LVs (less education, might never have been online)
 * Smartphones still a novelty in many of the areas being mapped
 * [HOT MicroGrant](https://www.hotosm.org/updates/2017-04-20_hot_microgrants_2017_results) helped purchase smartphones for mapping ([announcement](https://crowd2map.wordpress.com/2017/04/22/crowd2map-has-been-awarded-a-hot-microgrant/))
 * Program giving women access to smartphones to participate in the mapping initiative
@@ -360,9 +360,28 @@ Eric Gundersen, Mapbox
 * [YouthMappers](https://www.youthmappers.org/)
 * 3k+ girls finding safehouses thanks to mapping efforts
 * 75% reduction in FGM in Tanzania
-* Trained 300+ new mappers through the program
+* Trained 300+ new mappers through the program, 40% are women
 * [UNFPA Mapathon](https://ungaguide.com/listing/mapathon-at-unfpa-to-help-eliminate-female-genital-mutilation/)
 * **Ongoing Needs**
+
+## OSM in World Bank Operations: Analyzing Green Space in Tbilisi, Georgia
+
+Charles Fox, The World Bank
+
+* Green space improves quality of life in many different ways:
+  * environmental (cooling, reduce pollution, increase drainage)
+  * social (psychological, increases longevity and recovery)
+  * economic (brings in more people if city is attractive)
+* Goal: change brownfield into green urban spaces
+* Analyzed who can get to a park in Tbilisi
+  * Consider travel time, instead of discrete distance buffers
+  * Calculate centroids over grid, calculate distance for each centroid
+  * Use [OSRM](http://project-osrm.org/) (hack to get more than 25 origins/25 destinations per time for efficiency)
+  * Remotely tag satellite images as parks; validate with locals (might actually be a creepy abandoned medical facility!)
+  * Consider weighting local parks vs destination parks; whether a park is actually easy to get to
+  * Can make policy recommendations for which areas need better park access
+  * Also built a classifier to auto-detect parks
+    * Can use information (esp. color spectrum) beyond human vision
 
 ## Filling in the Gaps with the Mapillary API
 
@@ -687,5 +706,50 @@ Ian Malott, Kaart
 
 * [Pic4Review](https://pic4review.pavie.info/#/)
   * Tool to use street-view imagery to edit/review OSM data
-  * Uses Mapillary, OpenStreetCam, Wikimedia COmmons, or Flickr
+  * Uses Mapillary, OpenStreetCam, Wikimedia Commons, or Flickr
   * Different "missions" for users, focusing on a single tag (you can create your own!)
+  * Needs developers to help maintain; right now has only one!
+
+## Lightning talks
+
+### FOAM
+* Built on Ethereum blockhain
+* 1000 people using protocol as cartographers around the world
+* Static proof of location
+* Deter vandalism by putting monetary "stakes" on accuracy of data
+* [Frontend](https://map.foam.space/)
+
+### Future Transportation, [Miriam Gonzalez](https://twitter.com/mapanauta)
+* Crucial role maps in AV
+* Like an artichoke because there are so many layers
+* Moving from navigation to AV: need **HD** maps
+  * See in advance certain objects (traffic signs, but also dynamic information)
+  * Move from static OSM to dynamic OSM
+  * Computer vision is critical for these goals
+
+
+### Transit Coverage, Simon Shapiro (Microsoft)
+* Naive approach to calculate: look at stops coverage per state
+* BUT all stops are not created equal
+* Instead, weight each stop by the number of passenger trips going through it
+* Do better: incentivize reporting, transparent verification, open communication between govt and corporations, annual reporting
+
+### Road Data Collection in Laos, [Holly Krambeck](https://twitter.com/hollykrambeck)
+* Laos has very little paved (rain-resistant) infrastructure
+* World Bank is trying to help with rural road asset management system
+  * www.laomap.org
+  * used Mapillary, OSM, and QGIS
+  * Mapillary image capture -> Image tagging -> OSM Editing GIS Update
+
+### HOT Data, [Dale Kunce](https://twitter.com/calimapnerd), American Red Cross
+* Where does the data go after we've mapped something?
+* 10% of all active mappers are on HOT
+* Get the data, put it on airplanes!
+  * Team asks for a map so they can get around
+  * Printed out and given to aid workers (BIG wall maps, travel maps)
+  * Can reunite people using maps
+  * Detect state of buildings; span of refugee camps
+
+### geoq, [Horace Williams](https://twitter.com/worace)
+* [geoq](https://github.com/worace/geoq)
+* OpenSource Unix-friendly streaming tool for visualizing geoJSON
