@@ -465,11 +465,28 @@ Charles Fox, The World Bank
   * https://petabencana.id/map/jakarta
   * http://inaware.bnpb.go.id/inaware/
 
+##OpenStreetCam Is Now An Open Machine Learning Platform for OpenStreetMap
+
+Adrien Margin, Telenav
+
+1. Detect sign - 200k images (only use high quality); >.95 precision and recall
+2. Geopositioning
+3. Aggregate from multiple trips (take center of the group; unsupervised ML)
+4. Compare against OSM
+5. One-click OSM edit
+
+* Future steps:
+  * Detecting lanes and more signs
+  * POI detection
+  * On-board integration
+
+* Implemented in Python
+
 ## Building AI-Assisted Mapping Tools: Progress And Lessons Learned
 
 [Drew Bollinger](https://twitter.com/drewbo19), Development Seed
 
-* Identify Coverage potential by comparing current OSM building coverage to ML-predicted building presence
+* Identify coverage potential by comparing current OSM building coverage to ML-predicted building presence
 * [LabelMaker](https://github.com/developmentseed/label-maker)
 * [Google DeepLab v3](https://github.com/tensorflow/models/tree/master/research/deeplab)
 * 256x256px tiles for analysis
@@ -532,6 +549,15 @@ In-Q-Tel CosmiQ Works / SpaceNet
   * 4 - Complete mapping with human validation (Mapping larger areas that can't be validated exhausitvely; confident enough to rely on spot-checking / partial validation)
   * 5 - Complete mapping
 
+##Climate Change Impact Assessments with OSM
+
+[Ethan Nelson](https://twitter.com/ethan_nelson), JPL
+
+* Use OSM to show actual changes in weather/climate
+* Guide response to climate change
+  * See where buildings won't have heat relief at night
+  * Know who/what/how many will be impacted by a hurricane
+
 ##  Semi-Automated Map Editing
 
 Fayven Bastani, MIT CSAIL
@@ -579,6 +605,21 @@ Fayven Bastani, MIT CSAIL
   * Problem Case: When incomplete data appears complete (e.g. Detroit -- lots of empty lots due to demolation; cause the map to look incomplete even though it is)
 * "Managing Absence" - when is something missing vs when there is actually nothing there
 * OSM - is it nearing "completion" in some areas?
+
+##Lightning Talks
+
+###When Seeing Isn't Solving
+
+[Jerry Paffendorf](https://twitter.com/WELLO), Loveland
+
+* No one wants to track foreclosures during so-called "recovery"
+* You can track data, but if your findings are threatening/antagonistic it's not enough!
+
+###Planet Data
+
+[Michelle Steigerwalt](https://twitter.com/Yuffster), MapBox
+
+* Harness PBF file structure to extract smaller, more manageable amounts of data!
 
 ##  Offline Maps for Mobile — Making Maps That Are Mobile First
 
@@ -642,6 +683,33 @@ Monica Brandeis, Critigen
   * Other indicators -- areas prone to natural disasters, etc
 * Integration + Collaboration
   * Need to integrate analytics with JOSM, Task Manager, MapRoulette
+
+##Map Matching when the Map is Wrong
+
+James Murphy, Lyft
+
+* Associate observed routes to map
+* Improve accuracy
+* Associate data to known roads
+* Challenges:
+  * Poor location accuracy (GPS, equipment variety)
+  * Missing data (not GPS, connectivity)
+  * Complex roads
+* Can default force match points to map
+  * BUT there are unmapped areas, parking lots, alleys, etc.
+* Robust Map Matching with HMMs; state is [previous location, current observation]; define candidate, observation model, transition model
+* Can switch free space vs. map matched segments as needed
+* Semi-interaction: off-road points can spawn on-road points, but not vice-versa
+* [Paper](https://arxiv.org/abs/1809.09755)
+
+##Maps for All Maneuvers
+
+Lyft
+
+* Off-road movement is normal for bikes, scooters, pedestrians
+* Parking lots, turns, "illegal" traffic movements can all create off-road movements even with cars
+* These can throw off distance calculations
+* Can use map features to fill in bike lanes, sidewalks (space between buildings/road interaction-->sidewalk)
 
 ## Urchn Tells You Where Cities Change, and Where OSM is Out-of-date
 
